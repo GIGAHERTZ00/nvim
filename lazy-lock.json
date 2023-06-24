@@ -1,0 +1,4 @@
+{
+  "darcula": { "branch": "master", "commit": "92e8f51d82b36fc6cca148eb98dd3e4cfacc92cd" },
+  "lazy.nvim": { "branch": "main", "commit": "3b0632977ec04cb2eb7707cab0ced8e254405cb9" }
+}
