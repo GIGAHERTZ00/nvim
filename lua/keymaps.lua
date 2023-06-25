@@ -35,6 +35,10 @@ keymap("n", "gl", "gt", opts)
 -- Split window
 keymap("n", "ss", ":split<Return><C-w>w", opts)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
+keymap('', 'sh', '<C-w>h', opts)
+keymap('', 'sk', '<C-w>k', opts)
+keymap('', 'sj', '<C-w>j', opts)
+keymap('', 'sl', '<C-w>l', opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
@@ -67,5 +71,6 @@ keymap("v", ">", ">gv", opts)
 -- ビジュアルモード時vで行末まで選択
 keymap("v", "v", "$h", opts)
 
--- 0番レジスタを使いやすくした
-keymap("v", "<C-p>", '"0p', opts)
+
+-- terminal --
+keymap('t', "<ESC>", [[<C-\><C-n>]], opts)
