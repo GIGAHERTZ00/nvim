@@ -162,4 +162,7 @@ return {
   {
     "cohama/lexima.vim",
   },
+  {
+    "uga-rosa/ccc.nvim",
+  },
 }
