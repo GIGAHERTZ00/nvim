@@ -7,8 +7,7 @@ return {
       })
       vim.cmd([[colorscheme ayu]])
     end
-  },
-  { --mason
+  },{ --mason
     'williamboman/mason.nvim',
     config = function()
       require("mason").setup({
@@ -34,14 +33,11 @@ return {
         },
       })
     end
-  },
-  {
+  },{
     "williamboman/mason-lspconfig.nvim",
-  },
-  {
+  },{
     "neovim/nvim-lspconfig",
-  },
-  {
+  },{
     "nvim-lualine/lualine.nvim",
     config = function()
       require("lualine").setup({
@@ -85,11 +81,9 @@ return {
         extensions = {}
       })
     end
-  },
-  {
+  },{
     "nvim-lua/plenary.nvim"
-  },
-  {
+  },{
     "nvim-telescope/telescope.nvim",
     config = function()
       require("telescope").setup({
@@ -104,14 +98,11 @@ return {
         },
       })
     end
-  },
-  {
+  },{
     "stevearc/dressing.nvim",
-  },
-  {
+  },{
     "MunifTanjim/nui.nvim",
-  },
-  {
+  },{
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -136,11 +127,9 @@ return {
         },
       })
     end
-  },
-  {
+  },{
     "rcarriga/nvim-notify",
-  },
-  {
+  },{
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({
@@ -158,11 +147,11 @@ return {
           },
       })
     end
-  },
-  {
+  },{
     "cohama/lexima.vim",
-  },
-  {
+  },{
     "uga-rosa/ccc.nvim",
+  },{
+    "github/copilot.vim",
   },
 }
