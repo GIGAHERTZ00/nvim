@@ -84,50 +84,50 @@ return {
   },{
     "nvim-lua/plenary.nvim"
   },{
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require("telescope").setup({
-        defaults = {
-          sorting_strategy = "ascending",
-          layout_strategy = "vertical",
-          layout_config = { height = 0.9 },
-          file_ignore_patterns= {
-            "^.git/",
-            "^node_modules/",
-          },
-        },
-      })
-    end
+   "nvim-telescope/telescope.nvim",
+   config = function()
+     require("telescope").setup({
+       defaults = {
+         sorting_strategy = "ascending",
+         layout_strategy = "vertical",
+         layout_config = { height = 0.9 },
+         file_ignore_patterns= {
+           "^.git/",
+           "^node_modules/",
+         },
+       },
+     })
+   end
   },{
     "stevearc/dressing.nvim",
   },{
     "MunifTanjim/nui.nvim",
   },{
-   "folke/noice.nvim",
-   event = "VeryLazy",
-   dependencies = {
-     "MunifTanjim/nui.nvim",
-     "rcarriga/nvim-notify",
-   },
-   config = function()
-     require("noice").setup({
-       lsp = {
-         override = {
-           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-           ["vim.lsp.util.stylize_markdown"] = true,
-           ["cmp.entry.get_documentation"] = true,
-         },
-       },
-       presets = {
-         bottom_search = true, -- use a classic bottom cmdline for search
-         command_palette = true, -- position the cmdline and popupmenu together
-         long_message_to_split = true, -- long messages will be sent to a split
-         inc_rename = false, -- enables an input dialog for inc-rename.nvim
-         lsp_doc_border = false, -- add a border to hover docs and signature help
-       },
-     })
-   end
-  },{
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
+  },
+  config = function()
+    require("noice").setup({
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false, -- add a border to hover docs and signature help
+      },
+    })
+  end
+ },{
     "rcarriga/nvim-notify",
   },{
     "norcalli/nvim-colorizer.lua",
@@ -153,5 +153,7 @@ return {
     "uga-rosa/ccc.nvim",
   },{
     "github/copilot.vim",
-  },
+  },{
+    "hrsh7th/nvim-cmp",
+  }
 }
