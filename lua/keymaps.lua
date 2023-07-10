@@ -19,10 +19,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- New tab
 keymap("n", "te", ":tabedit", opts)
@@ -40,6 +40,7 @@ keymap('', 'sk', '<C-w>k', opts)
 keymap('', 'sj', '<C-w>j', opts)
 keymap('', 'sl', '<C-w>l', opts)
 keymap("n", "sts", ":split<Return><C-w>w<C-w>j:terminal<Return>i", opts)
+keymap("n", "stv", ":vsplit<Return><C-w>w<C-w>l:terminal<Return>i", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
@@ -75,3 +76,11 @@ keymap("v", "v", "$h", opts)
 
 -- terminal --
 keymap('t', "<ESC>", [[<C-\><C-n>]], opts)
+
+
+-- other
+-- ファイルを開く
+keymap("n", "<Space>we", ":w<Return>:e<Space>.<Return>", opts)
+keymap("n", "<Space>wt", ":w<Return><C-w>j:terminal<Return>i", opts)
+keymap("n", "<Space>wtt", ":w<Return>:split<Return><C-w>w<C-w>j:terminal<Return>i", opts)
+keymap("n", "<Space>e", ":e<Space>.<Return>", opts)
