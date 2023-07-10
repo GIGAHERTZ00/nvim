@@ -39,6 +39,7 @@ keymap('', 'sh', '<C-w>h', opts)
 keymap('', 'sk', '<C-w>k', opts)
 keymap('', 'sj', '<C-w>j', opts)
 keymap('', 'sl', '<C-w>l', opts)
+keymap("n", "sts", ":split<Return><C-w>w<C-w>j:terminal<Return>i", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
