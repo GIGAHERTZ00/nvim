@@ -81,7 +81,7 @@ keymap('t', "<ESC>", [[<C-\><C-n>]], opts)
 -- other
 -- ファイルを開く
 keymap("n", "<Space>we", ":w<Return>:e<Space>.<Return>", opts)
-keymap("n", "<Space>wt", ":w<Return><C-w>j:terminal<Return>i", opts)
+keymap("n", "<Space>wt", ":w<Return><C-w>ji", opts)
 keymap("n", "<Space>wtt", ":w<Return>:split<Return><C-w>w<C-w>j:terminal<Return>i", opts)
 keymap("n", "<Space>e", ":e<Space>.<Return>", opts)
 keymap("n", "<Space>w", ":w<Return>", opts)
