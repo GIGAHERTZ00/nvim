@@ -78,6 +78,20 @@ keymap("v", "v", "$h", opts)
 keymap('t', "<ESC>", [[<C-\><C-n>]], opts)
 
 
+-- LSP --
+-- カーソル下の変数の情報を表示
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+-- カーソル下の変数の定義元へジャンプ
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+-- インデントを揃える
+keymap("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+-- カーソル下の変数をコード内で参照している箇所を一覧表示
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- カーソル下の変数の型を表示
+keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+-- 変数名の変更
+keymap("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+
 -- other
 -- ファイルを開く
 keymap("n", "<Space>we", ":w<Return>:e<Space>.<Return>", opts)
@@ -87,3 +101,5 @@ keymap("n", "<Space>e", ":e<Space>.<Return>", opts)
 keymap("n", "<Space>w", ":w<Return>", opts)
 -- Press <space>wq to save and quit
 keymap("n", "<Space>wq", ":wq<Return>", opts)
+-- Press <space>t to open a terminal
+keymap("n", "<Space>t", ":terminal<Return>i", opts)

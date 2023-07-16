@@ -41,11 +41,12 @@ local options = {
   -- guifont = "monospace:h17",
   splitbelow = true, -- オンのとき、ウィンドウを横分割すると新しいウィンドウはカレントウィンドウの下に開かれる
   splitright = true, -- オンのとき、ウィンドウを縦分割すると新しいウィンドウはカレントウィンドウの右に開かれる
-  virtualedit = "onemore",
+  virtualedit = {"onemore","block"},
   list = true,
   listchars = { tab = '>.', trail = '_', nbsp = '+' },
 }
 
+vim.scriptencoding = "utf-8"
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
