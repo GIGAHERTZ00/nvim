@@ -118,32 +118,32 @@ return {
   },{
     "MunifTanjim/nui.nvim",
   },
-  --{
-  --  "folke/noice.nvim",
-  --  event = "VeryLazy",
-  --  dependencies = {
-  --    "MunifTanjim/nui.nvim",
-  --    "rcarriga/nvim-notify",
-  --  },
-  --  config = function()
-  --    require("noice").setup({
-  --      lsp = {
-  --        override = {
-  --          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-  --          ["vim.lsp.util.stylize_markdown"] = true,
-  --          ["cmp.entry.get_documentation"] = true,
-  --        },
-  --      },
-  --      presets = {
-  --        bottom_search = true, -- use a classic bottom cmdline for search
-  --        command_palette = true, -- position the cmdline and popupmenu together
-  --        long_message_to_split = true, -- long messages will be sent to a split
-  --        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-  --        lsp_doc_border = false, -- add a border to hover docs and signature help
-  --      },
-  --    })
-  --  end
-  --},
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    config = function()
+      require("noice").setup({
+        lsp = {
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+        },
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+        },
+      })
+    end
+  },
   {
     "rcarriga/nvim-notify",
   },{
@@ -179,9 +179,7 @@ return {
       require("cmp").setup({
         snippet = {
           expand = function()
-            vim.fn["vsnip#anonymous"](args.body)
-            --vim.fn([[vsnip_snippet_dir = expand("~/.config/nvim/snippets/")]])(args.body)
-            vim.cmd([[let g:vsnip_snippet_dir = expand($HOME . '/.config/nvim/snippets')]])
+            require('luasnip').lsp_expand(args.body)
           end,
         },window = {
           completion = cmp.config.window.bordered(),
@@ -193,24 +191,34 @@ return {
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ['<C-k>'] = cmp.mapping(function(fallback)
+            if luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' })
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          { name = 'vsnip' },
-        }, {
+          { name = 'luasnip' },
           { name = 'buffer' },
         })
       })
+      vim.cmd [[
+        set completeopt=menuone,noinsert,noselect
+        highlight! default link CmpItemKind CmpItemMenuDefault
+      ]]
     end
   },{
     "hrsh7th/cmp-nvim-lsp",
   },{
-    "hrsh7th/vim-vsnip",
-  },{
-    "hrsh7th/cmp-vsnip",
-  },{
     "hrsh7th/cmp-buffer",
   },{
     "hrsh7th/cmp-path",
-  },
+  },{
+    "L3MON4D3/LuaSnip",
+  },{
+    "saadparwaiz1/cmp_luasnip",
+  }
 }
