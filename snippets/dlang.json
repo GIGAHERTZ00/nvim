@@ -1,6 +1,6 @@
 {
   "AtCoder Beginner Contest's template for Dlang": {
-    "prefix": "dabc",
+    "prefix": ["dabc"],
     "body": [
       "import std;",
       "void scan(T...)(ref T args){auto a=readln.chomp.split;foreach(i,t;T)args[i]=a[i].to!t;}",

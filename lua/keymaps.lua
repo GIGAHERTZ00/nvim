@@ -99,6 +99,9 @@ keymap("n", "<Space>wt", ":w<Return><C-w>ji", opts)
 keymap("n", "<Space>wtt", ":w<Return>:split<Return><C-w>w<C-w>j:terminal<Return>i", opts)
 keymap("n", "<Space>e", ":e<Space>.<Return>", opts)
 keymap("n", "<Space>w", ":w<Return>", opts)
+keymap("n", "<Space>wf", ":w<Return>:Telescope find_files<Return>", opts)
+keymap("n", "<Space>f", ":Telescope find_files<Return>", opts)
+
 -- Press <space>wq to save and quit
 keymap("n", "<Space>wq", ":wq<Return>", opts)
 -- Press <space>t to open a terminal

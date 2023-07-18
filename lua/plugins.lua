@@ -179,8 +179,9 @@ return {
       require("cmp").setup({
         snippet = {
           expand = function()
-            --vim.fn["vsnip#anonymous"](args.body)
-            vim.fn([[vsnip_snippet_dir = expand("~/.config/nvim/snippets/")]])(args.body)
+            vim.fn["vsnip#anonymous"](args.body)
+            --vim.fn([[vsnip_snippet_dir = expand("~/.config/nvim/snippets/")]])(args.body)
+            vim.cmd([[let g:vsnip_snippet_dir = expand($HOME . '/.config/nvim/snippets')]])
           end,
         },window = {
           completion = cmp.config.window.bordered(),
