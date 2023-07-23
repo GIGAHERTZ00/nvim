@@ -9,7 +9,7 @@ ls.add_snippets(nil, {
 
   d = {
     snip({
-        trig = "dabc",
+        trig = "abc",
       },{
         text({
           "import std;",
@@ -23,13 +23,13 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "daoj",
+        trig = "aoj",
       },{
         text({
           "import std.stdio,std.string,std.functional,std.conv,std.algorithm,std.range,std.traits,std.math,std.container,std.bigint,std.numeric,std.conv,std.typecons,std.uni,std.ascii,std.bitmanip,core.bitop;",
           "void scan(T...)(ref T args){auto a=readln.chomp.split;foreach(i,t;T)args[i]=a[i].to!t;}",
           "T[] readarr(T=long)(){return readln.chomp.split.to!(T[]);}",
-          "auto printa(T)(T[] a) {writefln(\"%(%s %)\",a);}",
+          "void printa(T)(T[] a) {writefln(\"%(%s %)\",a);}",
           "",
           "void main(){",
           "  ",
@@ -37,7 +37,7 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "dbs",
+        trig = "bs",
       },{
         text({
           "auto BS(T)(T[] arr,T key){",
@@ -56,7 +56,7 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "ddfs",
+        trig = "dfs",
       },{
         text({
           "void DFS(T)(T[][] G,T now, T goal, bool[] flg){",
@@ -72,7 +72,7 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "dls",
+        trig = "ls",
       },{
         text({
           "auto LS(T)(T[] arr,T key){",
@@ -85,14 +85,7 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "${1}",
-      },{
-        text({
-          "${2}",
-        }),
-        insert(0),
-    }),snip({
-        trig = "dpf",
+        trig = "pf",
       },{
         text({
           "auto pf(T)(T n){",
@@ -112,10 +105,41 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),snip({
-        trig = "drbt",
+        trig = "rbt",
       },{
         text({
           "auto rbt = new RedBlackTree!(long, `a < b`,false)();",
+        }),
+        insert(0),
+    }),snip({
+        trig = "UnionFind",
+      },{
+        text({
+          "class UnionFind{",
+          "  long[] par;",
+          "  this(long n){",
+          "    par.length=n;",
+          "    par.fill(-1);",
+          "  }long root(long a){",
+          "    if(par[a]<0){",
+          "      return a;",
+          "    }else{",
+          "      return par[a]=root(par[a]);",
+          "    }",
+          "  }long size(long a){",
+          "    return -par[root(a)];",
+          "  }bool connect(long a, long b){",
+          "    a = root(a);",
+          "    b = root(b);",
+          "    if(a == b){",
+          "      return false;",
+          "    }if(size(a) < size(b)){",
+          "      swap(a,b);",
+          "    }par[a] += par[b];",
+          "    par[b] = a;",
+          "    return true;",
+          "  }",
+          "};",
         }),
         insert(0),
     }),
@@ -143,7 +167,7 @@ ls.add_snippets(nil, {
   -- lualatex --
   tex = {
     snip({
-        trig = "lualatex",
+        trig = "report",
       },{
         text({
           "\\RequirePackage{plautopatch}",
@@ -216,6 +240,19 @@ ls.add_snippets(nil, {
           "\\begin{document}",
           "  ",
           "\\end{document}",
+        }),
+        insert(0),
+    }),snip({
+        trig = "fig",
+      },{
+        text({
+          "\\begin{figure}[H]",
+          "  \\begin{center}",
+          "    \\includegraphics[width=0.5\\linewidth]{${1}}",
+          "  \\end{center}",
+          "  \\caption{${2}}",
+          "\\end{figure}",
+          ""
         }),
         insert(0),
     }),
