@@ -22,7 +22,7 @@ autocmd({ "BufReadPost" }, {
 })
 
 -- WSL環境でのクリップボードの有効化
-if vim.fn.has("wsl") then
+if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "win32yank-wsl",
     copy = {
