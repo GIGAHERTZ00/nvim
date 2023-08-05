@@ -169,7 +169,8 @@ ls.add_snippets(nil, {
   },
 
   -- lualatex --
-  tex = {
+
+  all = {
     snip({
         trig = "report",
       },{
@@ -260,5 +261,5 @@ ls.add_snippets(nil, {
         }),
         insert(0),
     }),
-  }
+  },
 })
