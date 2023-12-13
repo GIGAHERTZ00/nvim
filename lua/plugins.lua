@@ -38,16 +38,17 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = true,
-        --ensure_installed = {
-        --  "clangd",
-        --  "custom-elements-languageserver",
-        --  "html-lsp",
-        --  "kotlin-language-server",
-        --  "ltex-ls",
-        --  "lua-language-server",
-        --  "serve-d",
-        --  "typescript-language-server"
-        --},
+        ensure_installed = {
+          "clangd",
+          "custom-elements-languageserver",
+          "html-lsp",
+          "kotlin-language-server",
+          "ltex-ls",
+          "lua-language-server",
+          "serve-d",
+          "typescript-language-server",
+          "astro"
+        },
       })
     end
   },{
@@ -172,7 +173,8 @@ return {
   --},
   {
     "github/copilot.vim",
-  },{
+  },
+  {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")

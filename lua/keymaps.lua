@@ -78,19 +78,19 @@ keymap("v", "v", "$h", opts)
 keymap('t', "<ESC>", [[<C-\><C-n>]], opts)
 
 
--- LSP --
--- カーソル下の変数の情報を表示
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
--- カーソル下の変数の定義元へジャンプ
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
--- インデントを揃える
-keymap("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
--- カーソル下の変数をコード内で参照している箇所を一覧表示
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
--- カーソル下の変数の型を表示
-keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
--- 変数名の変更
-keymap("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+---- LSP --
+---- カーソル下の変数の情報を表示
+--keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+---- カーソル下の変数の定義元へジャンプ
+--keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+---- インデントを揃える
+--keymap("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+---- カーソル下の変数をコード内で参照している箇所を一覧表示
+--keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+---- カーソル下の変数の型を表示
+--keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+---- 変数名の変更
+--keymap("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
 -- other
 -- ファイルを開く
@@ -106,3 +106,18 @@ keymap("n", "<Space>f", ":Telescope find_files<Return>", opts)
 keymap("n", "<Space>wq", ":wq<Return>", opts)
 -- Press <space>t to open a terminal
 keymap("n", "<Space>t", ":terminal<Return>i", opts)
+
+
+--LSP
+keymap('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+keymap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+keymap('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+keymap('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)

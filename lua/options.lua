@@ -43,7 +43,8 @@ local options = {
   splitright = true, -- オンのとき、ウィンドウを縦分割すると新しいウィンドウはカレントウィンドウの右に開かれる
   virtualedit = {"onemore","block"},
   list = true,
-  listchars = { tab = '>.', trail = '_', nbsp = '+' },
+  --listchars = { tab = '>.', trail = '･', nbsp = '+' },
+  listchars = { tab = '>-', space = '･', nbsp = '+' },
 }
 
 vim.scriptencoding = "utf-8"
