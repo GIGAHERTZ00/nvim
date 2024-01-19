@@ -171,9 +171,9 @@ return {
   --{
   --  "uga-rosa/ccc.nvim",
   --},
-  {
-    "github/copilot.vim",
-  },
+  --{
+  --  "github/copilot.vim",
+  --},
   {
     "hrsh7th/nvim-cmp",
     config = function()
@@ -222,5 +222,7 @@ return {
     "L3MON4D3/LuaSnip",
   },{
     "saadparwaiz1/cmp_luasnip",
+  },{
+    "wuelnerdotexe/vim-astro",
   },
 }

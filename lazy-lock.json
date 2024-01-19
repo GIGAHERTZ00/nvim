@@ -4,7 +4,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
-  "copilot.vim": { "branch": "release", "commit": "98c293994f1bbebd5bade5d5840ead3b2feb5074" },
   "dressing.nvim": { "branch": "master", "commit": "1cbc4eef2ef7d745aa1a559b22589e33860cf077" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lexima.vim": { "branch": "master", "commit": "1f5dd656018f83ad03bddda216bd5c04d23ba57d" },
@@ -19,5 +18,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "b6b34b9acf84949f0ac1c00747765e62b81fb38d" },
   "nvim-notify": { "branch": "master", "commit": "ea9c8ce7a37f2238f934e087c255758659948e0f" },
   "plenary.nvim": { "branch": "master", "commit": "36aaceb6e93addd20b1b18f94d86aecc552f30c4" },
-  "telescope.nvim": { "branch": "master", "commit": "219584a6efd32d0478dcd62b501c348bc44d9d43" }
+  "telescope.nvim": { "branch": "master", "commit": "219584a6efd32d0478dcd62b501c348bc44d9d43" },
+  "vim-astro": { "branch": "main", "commit": "9b4674ecfe1dd84b5fb9b4de1653975de6e8e2e1" }
 }
